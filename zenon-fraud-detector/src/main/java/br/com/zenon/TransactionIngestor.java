@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public class TransactionIngestor {
 
-    public List<Transaction> readTransactions(String fileName) throws Exception {
+    public List<Transaction> readTransactions(String fileName){
 
         Path path = Path.of(fileName);
 
