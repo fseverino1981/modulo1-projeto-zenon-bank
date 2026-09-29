@@ -2,7 +2,6 @@ package br.com.zenon;
 
 import java.math.BigDecimal;
 import java.util.Objects;
-import java.util.Optional;
 
 public record TransactionCustomer(String name, BigDecimal oldBalance, BigDecimal newBalance) {
     public TransactionCustomer{

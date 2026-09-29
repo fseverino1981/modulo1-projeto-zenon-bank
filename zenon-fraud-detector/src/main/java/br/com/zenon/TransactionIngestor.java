@@ -6,7 +6,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 public class TransactionIngestor {
@@ -14,7 +13,6 @@ public class TransactionIngestor {
     public List<Transaction> readTransactions(String fileName) throws Exception {
 
         Path path = Path.of(fileName);
-        List<Transaction> transactionList = new ArrayList<>();
 
         try{
             List<String> lines = Files.readAllLines(path);
