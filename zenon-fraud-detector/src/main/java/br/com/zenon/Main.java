@@ -1,6 +1,7 @@
 package br.com.zenon;
 
 import java.math.BigDecimal;
+import java.nio.file.Path;
 import java.text.NumberFormat;
 import java.time.Duration;
 import java.util.*;
@@ -22,11 +23,11 @@ public class Main {
 //
 //        IO.println("Transacão 1: " + transaction1);
 //        IO.println("Transacão 2: " + transaction2);
-        TransactionIngestor transactionIngestor = new TransactionIngestor();
+//        TransactionIngestor transactionIngestor = new TransactionIngestor();
 
-        List<Transaction> transactions;
+//        List<Transaction> transactions;
 
-        transactions = transactionIngestor.readTransactions("./data/PS_20174392719_1491204439457_log.csv");
+//        transactions = transactionIngestor.readTransactions("./data/PS_20174392719_1491204439457_log.csv");
         /*System.out.println(transactions.size());
 
         transactions.stream().limit(10).forEach(System.out::println);
@@ -61,26 +62,28 @@ public class Main {
         fraudsByType.forEach((type, count) ->
                 IO.println(" - %s: %d".formatted(type, count)));*/
 
-        var transactionListRepository = new TransactionListRepository(transactions);
+//        var transactionListRepository = new TransactionListRepository(transactions);
 
 //        String nameToFind = "C12345";
 //        extracted(transactionListRepository, nameToFind);
 //        nameToFind = "C1231006815";
 //        extracted(transactionListRepository, nameToFind);
 
-        String nameToFind = "C1868032458";
-        long startTime = System.nanoTime();
-        transactionListRepository.findByOriginName(nameToFind)
-                .ifPresentOrElse(IO::println,() ->
-                        IO.println("Transação não encontrada para: " + nameToFind));
-        System.out.println("Tempo de execucão: " + Duration.ofNanos(System.nanoTime() - startTime).toMillis());
+//        String nameToFind = "C1868032458";
+//        long startTime = System.nanoTime();
+//        transactionListRepository.findByOriginName(nameToFind)
+//                .ifPresentOrElse(IO::println,() ->
+//                        IO.println("Transação não encontrada para: " + nameToFind));
+//        System.out.println("Tempo de execucão: " + Duration.ofNanos(System.nanoTime() - startTime).toMillis());
+//
+//        var transactionMapRepository = new TransactionMapRepository(transactions);
+//        startTime = System.nanoTime();
+//        transactionMapRepository.findByOriginName(nameToFind)
+//                .ifPresentOrElse(IO::println,() ->
+//                        IO.println("Transação não encontrada para o cliente: " + nameToFind));
+//        System.out.println("Tempo de execucão: " + Duration.ofNanos(System.nanoTime() - startTime).toMillis());
 
-        var transactionMapRepository = new TransactionMapRepository(transactions);
-        startTime = System.nanoTime();
-        transactionMapRepository.findByOriginName(nameToFind)
-                .ifPresentOrElse(IO::println,() ->
-                        IO.println("Transação não encontrada para o cliente: " + nameToFind));
-        System.out.println("Tempo de execucão: " + Duration.ofNanos(System.nanoTime() - startTime).toMillis());
+
     }
 
 }
