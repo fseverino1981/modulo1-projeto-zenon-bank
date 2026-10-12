@@ -1,0 +1,11 @@
+services:
+  db.zeon:
+    image: mysql:9
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: senha123
+      MYSQL_DATABASE: zeon
+    ports:
+      - '3306:3306'
+volumes:
+  mysql.zeon:
